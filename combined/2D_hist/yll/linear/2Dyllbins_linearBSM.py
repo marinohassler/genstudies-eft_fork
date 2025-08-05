@@ -114,6 +114,7 @@ for op in operators:
     ax[1].axhline(1.0, color='gray', linestyle='dashed', linewidth=1)
     ax[1].set_ylabel('BSM / SM')
     ax[1].set_xlabel('mll [GeV]')
+    ax[1].set_xlim(0, 1000)
     ax[1].legend(fontsize=10)
 
     rvalid = np.concatenate([r[np.isfinite(r)] for r in all_ratios])
