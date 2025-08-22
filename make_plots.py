@@ -28,6 +28,10 @@ variables = {
     'detall': {
         'function': lambda tree: abs(tree.Lepton_eta[0]-tree.Lepton_eta[1]),
         'axis': hist.axis.Regular(25, 0, 5)
+    },
+    'ptll': {
+        'function': lambda tree: tree.ptll,
+        'axis': hist.axis.Regular(30, 0, 150)
     }
 }
 

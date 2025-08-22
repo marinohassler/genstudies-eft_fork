@@ -18,6 +18,7 @@ outfile = ROOT.TFile(os.path.join(args.directory, args.filename), 'RECREATE')
 # vectors for variables with multiple entries per event
 mll = array('d',[0.0])
 yll = array('d',[0.0])
+ptll = array('d',[0.0])
 sm_weight = array('d',[0.0])
 smeft_weight = ROOT.std.vector('double')()
 l_pdgid = ROOT.std.vector('int')()
@@ -34,6 +35,7 @@ l_phi = ROOT.std.vector('double')()
 ttree = ROOT.TTree('events','tree of generated events')
 ttree.Branch('mll', mll, 'mll/D')
 ttree.Branch('yll', yll, 'yll/D')
+ttree.Branch('ptll', ptll, 'ptll/D')
 ttree.Branch('EventWeight_SM', sm_weight, 'EventWeight_SM/D')
 ttree.Branch('EventWeight_SMEFT', smeft_weight)
 ttree.Branch('Lepton_pdgId',l_pdgid)
@@ -109,12 +111,14 @@ for infile in infiles:
             # invariant mass and rapidity of the dilepton system
             mll[0] = (leptons[0]+leptons[1]).M()
             yll[0] = (leptons[0]+leptons[1]).Rapidity()
+            ptll[0] = (leptons[0]+leptons[1]).pt()
 
             # fill the tree and reset variables before moving to the next event 
             ttree.Fill()
 
             mll[0] = 0.0
             yll[0] = 0.0
+            ptll[0] = 0.0
             sm_weight[0] = 0.0
             smeft_weight.clear()
             l_pdgid.clear()
