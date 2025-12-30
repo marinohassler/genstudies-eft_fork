@@ -1,0 +1,18 @@
+imax    1
+jmax    15
+kmax    *
+--------------------------------------------------------------------------------
+shapes data_obs  ch1 histograms_3D_unrolled_EFT.root hunroll_mll_yll_costh_data_obs
+shapes *         ch1 histograms_3D_unrolled_EFT.root hunroll_mll_yll_costh_$PROCESS
+--------------------------------------------------------------------------------
+bin          ch1
+observation  -1
+--------------------------------------------------------------------------------
+bin          ch1           ch1        ch1        ch1        ch1        ch1        ch1        ch1        ch1        ch1        ch1        ch1        ch1        ch1        ch1        ch1
+process      background    sm         clj1_lin   clj1_quad  clj3_lin   clj3_quad  ceu_lin    ceu_quad   ced_lin    ced_quad   cje_lin    cje_quad   clu_lin    clu_quad   cld_lin    cld_quad
+process      1             0          -1         -2         -3         -4         -5         -6         -7         -8         -9         -10        -11        -12        -13        -14
+rate         1             -1         -1         -1         -1         -1         -1         -1         -1         -1         -1         -1         -1         -1         -1         -1
+--------------------------------------------------------------------------------
+lumi         lnN           -          1.025      1.025      1.025      1.025      1.025      1.025      1.025      1.025      1.025      1.025      1.025      1.025      1.025      1.025      1.025
+--------------------------------------------------------------------------------
+* autoMCStats 0
